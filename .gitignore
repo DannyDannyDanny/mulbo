@@ -133,3 +133,6 @@ audio/*
 
 # config file
 config.py
+
+# ignore keynote file
+doc/*key
