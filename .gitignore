@@ -130,3 +130,6 @@ dmypy.json
 
 # audio files
 audio/*
+
+# config file
+config.py
