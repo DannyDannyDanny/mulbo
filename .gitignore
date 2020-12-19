@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # audio files
-audio/*
+library/*
 
 # config file
 config.py
