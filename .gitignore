@@ -136,3 +136,6 @@ config.py
 
 # ignore keynote file
 doc/*key
+
+# ignore mac junk
+**/.DS_Store
