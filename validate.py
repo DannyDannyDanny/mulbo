@@ -36,26 +36,31 @@ def list_audio_file_paths():
     return files_audio
 
 
-def generate_prepfile_from_filepath(filepath, head=0.02):
-    """loads specified filepath, writes head of signal to prepfile"""
+def write_rawfile(filepath):
+    """tries to load specified filepath, writes signal to rawfile:
+    44100Hz, 1 channel (Mono), signed 16 bit PCM little endian"""
     # load file
+
+    print(8*'------')
     print(f'reading file\t{filepath}')
     audio_array, samplerate = sf.read(filepath)
     print(f'\tsamples\t{audio_array.shape}')
     print(f'\tsamplerate\t{samplerate}')
-    # cut signal
-    last_sample_index = int(head*audio_array.shape[0])
-    print(f'prepfile cut set to {head} ({100*head} %)')
-    audio_array = audio_array[0:last_sample_index, :]
-    print(f'\tsamples\t{audio_array.shape}')
-    # write cut signal to prepfile
-    prepfile = config.dirs['prepfile']
-    print('signal hash:', hash(audio_array.sum()))
-    preptwin = prepfile.replace('.raw', '.wav')
-    print('writing prepfile:', prepfile)
-    sf.write(prepfile, audio_array, samplerate, subtype='PCM_16', endian='BIG')
-    print('writing preptwin:', preptwin)
-    sf.write(preptwin, audio_array, samplerate)
+
+    if samplerate != 44100:
+        # TODO add samplerate adjustment
+        print('needs to adjust samplerate')
+
+    # generate uuid for outname
+    id = filepath + str(audio_array.sum())
+    id = uuid.uuid5(uuid.NAMESPACE_OID, id).hex
+    outname = config.dirs['rawfiles'] + id + '.raw'
+
+    # write rawfile
+    print(f'writing rawfile\t{outname}')
+    kwargs = dict(samplerate=samplerate, subtype='PCM_16', endian='BIG')
+    sf.write(outname, audio_array, **kwargs)
+    return outname
 
 
 # %%
