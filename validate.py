@@ -9,6 +9,31 @@ import uuid
 from scipy import signal
 import matplotlib.pyplot as plt
 import random as r
+# dark mode plt
+plt.style.use(['dark_background'])
+# print(plt.style.available)
+
+
+class DataBase():
+    def __init__(self, id=None):
+        if id is None:
+            # generate new
+            self.id = uuid.uuid1().hex
+            self.filename = config.dirs['library'] + self.id + '.pkl'
+            start_cols = ['original_file', 'rawfile', 'shazam_tags']
+            self.df = pd.DataFrame(columns=start_cols)
+        else:
+            # try to load from id
+            self.id = id
+            self.filename = config.dirs['library'] + self.id + '.pkl'
+            self.df = pd.read_pickle(self.filename)
+
+    def __repr__(self):
+        return self.id
+
+    def save(self):
+        print('saving')
+        self.df.to_pickle(self.filename)
 
 
 def get_shazam_tags(rawfile, nsec=3):
@@ -92,25 +117,3 @@ def write_rawfile(filepath, play=False):
     sf.write(rawfile, sig, **kwargs)
     # print(db_ser.to_markdown())
     return db_ser
-
-
-# %%
-for filepath in glob(config.dirs['originals']+'*'):
-    try:
-        rawfile_data = write_rawfile(filepath)
-        print(f'scannned:\t{filepath}')
-    # except TypeError as e:
-    #     print(f'skipping: {e}')
-    except RuntimeError as e:
-        print(f'skipping:\t{e}')
-
-# %%
-for raw in glob(config.dirs['rawfiles']+'*'):
-    kw = dict(channels=1, samplerate=44100, format='RAW', subtype='PCM_16')
-    sig, fs = sf.read(raw, **kw)
-    break
-
-response = get_shazam_tags(raw)
-# %%
-# %%
-pd.read_pickle(resp_path)
