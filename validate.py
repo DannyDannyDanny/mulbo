@@ -65,7 +65,7 @@ def get_shazam_tags(rawfile, nsec=3):
         'x-rapidapi-host': "shazam.p.rapidapi.com"
     }
     response = requests.request("POST", url, data=payload, headers=headers)
-    guid = raw.split('/')[-1].split('.')[0]
+    guid = rawfile.split('/')[-1].split('.')[0]
     resp_pdsr = pd.Series(response.__dict__)
     resp_path = config.dirs['responses'] + guid + '.pkl'
     resp_pdsr.to_pickle(resp_path)
