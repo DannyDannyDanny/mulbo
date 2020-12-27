@@ -7,4 +7,5 @@ Mulbo - music library organizer that manages a file structure with your songs.
 3. Systematically organize sub-libraries.
 
 ## Next Steps
-* [ ] Find solution for [RapidAPI 413 discussion](https://rapidapi.com/apidojo/api/shazam/discussions?issueId=19362&issueTitle=payload-validation-and-how-to-deal-with-%22413-Request-Entity-Too-Large%22).
+* [x] Find solution for [RapidAPI 413 discussion](https://rapidapi.com/apidojo/api/shazam/discussions?issueId=19362&issueTitle=payload-validation-and-how-to-deal-with-%22413-Request-Entity-Too-Large%22).
+* [ ] Expand telegram bot interface with [Advanced Filters](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Advanced-Filters)
