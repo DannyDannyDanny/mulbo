@@ -23,7 +23,7 @@ The database is built from the following four tables:
 
 The sqlite database *mulbo.db* stores the song datamodel relationships and paths to raw data. Folders are organized in the following tree structure:
 ```
-library
+audio
 ├── mulbo.db
 ├── mycollection
 │   ├── 'some artist - some song (some album).wav'
