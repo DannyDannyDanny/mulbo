@@ -1,6 +1,9 @@
 # Mulbo
 Mulbo - audio experiments
 
+## This sound is not real
+A page like [this person does not exist](https://thispersondoesnotexist.com), except it generates new sounds.
+
 ## Audio Library
 Library organizer that manages a file structure with your audio data.
 1. Put all your music on your server and free up space on your local machine
