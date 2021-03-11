@@ -1,5 +1,16 @@
 # Mulbo
-Mulbo - audio experiments
+Mulbo - audio experiments unafiliated with anyone.
+
+## SoundBoard
+The idea: `links -> (??) -> Audio files -> (??) ->  Soundboard`
+* [x] Links make sense
+* [x] Audio file make sense
+* [ ] What is a soundboard?
+    * is it interactive?
+        * like a 4x4 drum machine grid
+        * or keypresses make sounds
+    * is it a generative audio stream?
+        * can you give it feedback?
 
 ## This sound is not real
 A page like [this person does not exist](https://thispersondoesnotexist.com), except it generates new sounds.
