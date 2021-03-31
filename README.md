@@ -30,7 +30,7 @@ The database is built from the following four tables:
 * *My Collection* - A generic placeholder where new songs are added. This is the only folder scanned by the program.
 * *Originals* - Each file in my collection is assigned a uuid and copied by to this folder under its id. Files only make it here if their signal can be read.
 * *Raw files* - Each original file signal is written as a raw audio file to this directory. The uuid persists across filenames.
-* *Responses* - Each signal if sampled and sent to the Shazam API. The response is pickled and saved to this directory under its uuid.
+* *Responses* - Each signal is sampled and sent to the Shazam API. The response is pickled and saved to this directory under its uuid.
 
 The sqlite database *mulbo.db* stores the song datamodel relationships and paths to raw data. Folders are organized in the following tree structure:
 ```
