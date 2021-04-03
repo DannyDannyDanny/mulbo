@@ -19,7 +19,7 @@ app.post('/api/demo/', (req, res) => {
     if (!req.body || !req.body.string) {
         return res.status(400).send('Bad request: request data should be an object with key "string".');
     }
-    fs.appendFileSync('nodeJS/requests/strings.txt', `{\n    "string": "${req.body.string.replaceAll('\n', '\\n')}"\n}, `);
+    fs.appendFileSync(`${__dirname}/requests/strings.txt`, `{\n    "string": "${req.body.string.replaceAll('\n', '\\n')}"\n}, `);
 });
 
 app.listen(port, () => {
