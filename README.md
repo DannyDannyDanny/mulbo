@@ -1,5 +1,16 @@
 # Mulbo
-Mulbo - audio experiments
+Mulbo - audio experiments unafiliated with anyone.
+
+## SoundBoard
+The idea: `links -> (??) -> Audio files -> (??) ->  Soundboard`
+* [x] Links make sense
+* [x] Audio file make sense
+* [ ] What is a soundboard?
+    * is it interactive?
+        * like a 4x4 drum machine grid
+        * or keypresses make sounds
+    * is it a generative audio stream?
+        * can you give it feedback?
 
 ## This sound is not real
 A page like [this person does not exist](https://thispersondoesnotexist.com), except it generates new sounds.
@@ -19,7 +30,7 @@ The database is built from the following four tables:
 * *My Collection* - A generic placeholder where new songs are added. This is the only folder scanned by the program.
 * *Originals* - Each file in my collection is assigned a uuid and copied by to this folder under its id. Files only make it here if their signal can be read.
 * *Raw files* - Each original file signal is written as a raw audio file to this directory. The uuid persists across filenames.
-* *Responses* - Each signal if sampled and sent to the Shazam API. The response is pickled and saved to this directory under its uuid.
+* *Responses* - Each signal is sampled and sent to the Shazam API. The response is pickled and saved to this directory under its uuid.
 
 The sqlite database *mulbo.db* stores the song datamodel relationships and paths to raw data. Folders are organized in the following tree structure:
 ```
