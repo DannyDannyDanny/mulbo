@@ -9,6 +9,9 @@ verify_ssl = true
 youtube-dl = "*"
 ipykernel = "*"
 loguru = "*"
+python-telegram-bot = "*"
+flask = "*"
+pandas = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.7.5"

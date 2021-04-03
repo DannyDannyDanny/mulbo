@@ -1,6 +1,7 @@
 from config import telegram_token, logging_format
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+print("test")
 
 updater = Updater(token=telegram_token)
 dispatcher = updater.dispatcher
