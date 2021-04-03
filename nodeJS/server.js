@@ -9,9 +9,10 @@ const port = 8081;
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('./nodeJS/front-end'));
 
-app.get('/api/demo/', (req, res) => {
-    res.send("hello");
+app.get('/', (req, res) => {
+    res.sendFile('index.html');
 });
 
 app.post('/api/demo/', (req, res) => {
