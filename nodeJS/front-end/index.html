@@ -61,7 +61,7 @@
             function submit() {
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:8081/api/demo",
+                    url: "/api/demo",
                     data: { string: document.getElementById("input").value },
                     success: function (response) {
                         console.log(response);
