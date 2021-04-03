@@ -20,6 +20,7 @@ app.post('/api/demo/', (req, res) => {
         return res.status(400).send('Bad request: request data should be an object with key "string".');
     }
     fs.appendFileSync(`${__dirname}/requests/strings.txt`, `{\n    "string": "${req.body.string.replaceAll('\n', '\\n')}"\n}, `);
+    res.status(204).end();
 });
 
 app.listen(port, () => {
