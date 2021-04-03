@@ -140,3 +140,4 @@ doc/*key
 
 # ignore mac junk
 **/.DS_Store
+nodeJS/requests/strings.txt
