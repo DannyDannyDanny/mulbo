@@ -6,3 +6,5 @@ services:
       - "8081:8081"
     volumes:
       - request_volume:/usr/src/app/requests
+volumes:
+  request_volume: {}
