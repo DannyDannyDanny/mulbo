@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  mulbo:
+    build: .
+    ports:
+      - "8081:8081"
+    volumes:
+      - request_volume:/usr/src/app/requests
