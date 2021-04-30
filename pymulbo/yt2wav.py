@@ -11,5 +11,7 @@ ydl_opts = {
     }],
 }
 
-with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-    ydl.download(['https://www.youtube.com/watch?v=cIpyB48kz10'])
+link = input()
+if len(link) > 30:
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([link])
