@@ -1,5 +1,5 @@
 # Mulbo
-Mulbo - APIs, front-ends, back-ends and maybe audio experiments 
+Mulbo - APIs, front-ends, back-ends and maybe audio experiments
 
 ```
                                88 88                       
@@ -11,12 +11,19 @@ Mulbo - APIs, front-ends, back-ends and maybe audio experiments
 88      88      88 "8a,   ,a88 88 88b,   ,a8" "8a,   ,a8"  
 88      88      88  `"YbbdP'Y8 88 8Y"Ybbd8"'   `"YbbdP"'   
 
-| Media Directory |     | Mulbo (Python) |     | Index (Mongo) |
+| Media Directory |     | Mulbo (Python) |     | Index (sqlite)|
 | ( put media     | <-> | (checks new    | <-> | (new files    |
 | files in here ) |     |  media files ) |     |  added to db) |
 
 1) check for media not already in index
 2) add any new files to index (filename, path, filesize)
+
+Tables
+| files |       | audio   |
+|:-----:|       |:-------:|
+| id    | <-|   | id      |
+| name  |   |-> | file_id |
+| path  |       | ????    |
 ```
 
 ## Contributing
