@@ -20,6 +20,6 @@ Mulbo - APIs, front-ends, back-ends and maybe audio experiments
 ```
 
 ## Contributing
-You've stubmled over a hobby project.
+You've stumbled over a hobby project.
 
 * [ASCII mulbo](https://ascii.co.uk/art/MULBO)
